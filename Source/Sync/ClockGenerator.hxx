@@ -53,9 +53,9 @@ public:
         if (start) {
             m_thread = std::thread([this]() {
                 while (m_running) {
-                    std::this_thread::sleep_for(std::chrono::milliseconds(1000 / m_frequency * m_dutyCycle / 100));
+                    std::this_thread::sleep_for(std::chrono::nanoseconds(1000000000 / m_frequency * m_dutyCycle / 100));
                     m_callback(true);
-                    std::this_thread::sleep_for(std::chrono::milliseconds(1000 / m_frequency * (100 - m_dutyCycle) / 100));
+                    std::this_thread::sleep_for(std::chrono::nanoseconds(1000000000 / m_frequency * (100 - m_dutyCycle) / 100));
                     m_callback(false);
                 }
             });
