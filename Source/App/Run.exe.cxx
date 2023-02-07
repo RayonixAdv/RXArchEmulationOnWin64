@@ -1,21 +1,10 @@
 #include <iostream>
-#include "../Mainboard/SquareGenerator.hxx"
-
-class Hi : public RXEmulator::Mainboard::SquareGenerator {
-protected:
-    void OnPulseChange(bool pulse) override {
-        std::cout << "Pulse: " << pulse << std::endl;
-    }
-
-public:
-    Hi() : SquareGenerator(10, 50) {}
-};
+#include "../Data/SRAM.hxx"
 
 int main(int argc, char* argv[]) {
-    Hi hi;
+    RXEmulator::Data::SRAM sram(8, 128); // x64-bit SRAM
 
-    hi.Start();
-    hi.Block();
+    
 
     return 0;
 }
