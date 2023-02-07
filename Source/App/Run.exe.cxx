@@ -1,10 +1,20 @@
-#include <iostream>
-#include "../Data/SRAM.hxx"
+#include "../MainBoard/MainBoard.hxx"
+#include "../Processor/Core.hxx"
+#include "../Processor/CPU.hxx"
 
 int main(int argc, char* argv[]) {
-    RXEmulator::Data::SRAM sram(8, 128); // x64-bit SRAM
+    std::vector<RXEmulator::Processor::Core *> cores;
+    size_t coreCount = 1;
+    for (size_t i = 0; i < coreCount; i++)
+        cores.push_back(new RXEmulator::Processor::Core(i));
+    RXEmulator::Processor::CPU cpu(cores);
 
-    
+    RXEmulator::MainBoard::MainBoard machine(2, { &cpu });
 
+    machine.Start();
+    machine.Block();
+
+    for (auto core : cores)
+        delete core;
     return 0;
 }

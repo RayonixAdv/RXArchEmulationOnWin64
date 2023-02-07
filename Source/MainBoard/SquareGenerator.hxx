@@ -2,7 +2,7 @@
 #include <thread>
 #include <chrono>
 
-namespace RXEmulator::Mainboard {
+namespace RXEmulator::MainBoard {
     /**
      * This class generates a square wave with a given frequency and duty cycle.
      */
@@ -34,7 +34,7 @@ namespace RXEmulator::Mainboard {
          */
         SquareGenerator(size_t frequency, size_t duty) : m_frequency(frequency), m_duty(duty), 
             m_thread(nullptr), m_active(false) {}
-        ~SquareGenerator() {
+        virtual ~SquareGenerator() {
             Stop();
             delete m_thread;
         }

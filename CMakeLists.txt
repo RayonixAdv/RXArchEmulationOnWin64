@@ -10,3 +10,8 @@ add_executable(RXEmulator ${RXEmulator_SRC})
 if(UNIX AND NOT APPLE)
     target_link_libraries(RXEmulator pthread)
 endif()
+
+# Enable threads for windows
+if(WIN32)
+    target_link_libraries(RXEmulator ws2_32)
+endif()
