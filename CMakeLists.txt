@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.2)
 project(RXEmulator)
 
-set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD 20)
 
 file(GLOB_RECURSE RXEmulator_SRC "Source/*.cxx" "Source/*.hxx")
 add_executable(RXEmulator ${RXEmulator_SRC})
