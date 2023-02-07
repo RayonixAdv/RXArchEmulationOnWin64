@@ -35,5 +35,13 @@ namespace RXEmulator::Data {
         uint8_t *GetCapturedBytes() {
             return m_capturedBytes;
         }
+
+        uint8_t *GetMemory() {
+            return m_data;
+        }
+
+        size_t GetSize() {
+            return m_bytesWidth * m_height;
+        }
     };
 }

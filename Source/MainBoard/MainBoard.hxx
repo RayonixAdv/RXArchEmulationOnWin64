@@ -2,6 +2,8 @@
 #include <vector>
 #include "SquareGenerator.hxx"
 #include "../Processor/CPU.hxx"
+#include "../Data/SRAM.hxx"
+#include "../Data/PermanentSRAM.hxx"
 
 namespace RXEmulator::MainBoard {
     /**

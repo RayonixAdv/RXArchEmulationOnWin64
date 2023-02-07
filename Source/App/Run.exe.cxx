@@ -1,6 +1,4 @@
 #include "../MainBoard/MainBoard.hxx"
-#include "../Processor/Core.hxx"
-#include "../Processor/CPU.hxx"
 
 int main(int argc, char* argv[]) {
     std::vector<RXEmulator::Processor::Core *> cores;
